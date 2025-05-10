@@ -1,14 +1,12 @@
 {
+  "type": "module",
   "dependencies": {
     "@supercharge/promise-pool": "^3.1.1",
     "cli-table3": "^0.6.3",
     "prettier": "^3.2.5",
     "typescript": "^5.3.2"
   },
-  "devDependencies": {
-    "@dagger.io/dagger": "file:sdk"
-  },
-  "scripts": {
-    "postinstall": "cp ./test/sdk.index-fixed.ts ./sdk/index.ts"
+  "dagger": {
+    "runtime": "bun"
   }
 }
