@@ -293,7 +293,7 @@ export class HfGgufToOllama {
 }
 
 @object()
-class GgufFile {
+export class GgufFile {
   @field()
   quant: string;
 
@@ -312,7 +312,7 @@ class GgufFile {
 }
 
 @object()
-class RepositoryInfo {
+export class RepositoryInfo {
   @field()
   ggufFiles: GgufFile[];
 
