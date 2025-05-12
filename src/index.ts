@@ -120,7 +120,7 @@ export class HfGgufToOllama {
     if (!url.includes("://")) {
       url = `https://huggingface.co/${url}`;
     }
-    const directory = dag.git(url).branch("").tree();
+    const directory = dag.git(url).head().tree();
 
     const files = await directory.entries();
 
@@ -351,7 +351,7 @@ function ggufTools(): Container {
       .from("alpine:3.19")
       .withMountedDirectory(
         "/gguf-tools",
-        dag.git("https://github.com/antirez/gguf-tools").branch("").tree()
+        dag.git("https://github.com/antirez/gguf-tools").head().tree()
       )
       .withWorkdir("/gguf-tools")
       .withExec(["apk", "add", "build-base"])
